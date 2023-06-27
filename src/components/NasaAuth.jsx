@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import PropTypes from 'prop-types';
 import { loadLanguagePack, updateLocale } from '@americanexpress/one-app-ducks';
 import { IntlProvider } from 'react-intl';
@@ -9,15 +9,24 @@ import { SignUpComponent } from './SignUpComponent';
 import { ErrorBoundary } from './ErrorBoundary';
 
 export const NasaAuth = ({
-  languageData, localeName, params,
+  languageData, localeName, params, router,
 }) => {
   const { authType, locale } = params || {};
+
+  console.log(`React in NASA Auth: ${React}`);
+  console.log(`router in auth: ${router}`);
 
   if (languageData) {
     return (
       <IntlProvider locale={localeName} messages={languageData}>
         <ErrorBoundary>
-          {authType === 'register' ? <SignUpComponent /> : <SignInComponent locale={locale} />}
+          {authType === 'register' ? <SignUpComponent />
+            : (
+              <SignInComponent
+                locale={locale}
+                router={router}
+              />
+            )}
         </ErrorBoundary>
       </IntlProvider>
     );
