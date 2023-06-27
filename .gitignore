@@ -3,7 +3,7 @@
 
 # node/npm
 node_modules
-scripts
+statics
 *.log
 
 # build
