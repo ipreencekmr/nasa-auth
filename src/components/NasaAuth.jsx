@@ -13,14 +13,17 @@ export const NasaAuth = ({
 }) => {
   const { authType, locale } = params || {};
 
-  console.log(`React in NASA Auth: ${React}`);
-  console.log(`router in auth: ${router}`);
-
   if (languageData) {
     return (
       <IntlProvider locale={localeName} messages={languageData}>
         <ErrorBoundary>
-          {authType === 'register' ? <SignUpComponent />
+          {authType === 'register'
+            ? (
+              <SignUpComponent
+                locale={locale}
+                router={router}
+              />
+            )
             : (
               <SignInComponent
                 locale={locale}

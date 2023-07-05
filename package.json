@@ -29,9 +29,7 @@
       "envVars": {
         "ONE_CONFIG_ENV": "development",
         "NODE_ENV": "development",
-        "HOLOCRON_MODULE_MAP_URL": "https://module-map.vercel.app/module-map.json",
-        "ONE_CLIENT_LOCALE_FILENAME": "integration",
-        "ONE_CLIENT_CDN_URL": "https://cdn.jsdelivr.net/gh/ipreencekmr/CDN@main/nasa/"
+        "HOLOCRON_MODULE_MAP_URL": "https://module-map.vercel.app/module-map.json"
       }
     },
     "bundler": {
@@ -54,7 +52,10 @@
     "react-intl": "^5.10.6",
     "react-redux": "^7.2.2",
     "redux": "^4.0.5",
-    "webpack": "^4.46.0"
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.11.16",
+    "@mui/material": "^5.13.6"
   },
   "devDependencies": {
     "@americanexpress/one-app-bundler": "^6.10.0",
@@ -63,6 +64,7 @@
     "amex-jest-preset-react": "^6.1.0",
     "babel-eslint": "^10.1.0",
     "babel-preset-amex": "^3.5.0",
+    "css-loader": "^6.8.1",
     "enzyme": "^3.11.0",
     "enzyme-to-json": "^3.6.1",
     "eslint": "^7.15.0",
@@ -73,7 +75,8 @@
     "jest-json-schema": "^2.1.0",
     "node-fetch": "^2.6.11",
     "parrot-middleware": "^4.1.1",
-    "rimraf": "^3.0.2"
+    "rimraf": "^3.0.2",
+    "style-loader": "^3.3.3"
   },
   "jest": {
     "preset": "amex-jest-preset-react",
