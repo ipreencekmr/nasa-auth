@@ -45,6 +45,10 @@
     "@babel/plugin-transform-react-jsx": "^7.22.5",
     "@babel/preset-env": "^7.22.5",
     "@babel/preset-react": "^7.22.5",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.11.16",
+    "@mui/material": "^5.13.6",
     "holocron": "^1.1.2",
     "immutable": "^4.0.0-rc.12",
     "prop-types": "^15.7.2",
@@ -52,10 +56,7 @@
     "react-intl": "^5.10.6",
     "react-redux": "^7.2.2",
     "redux": "^4.0.5",
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
-    "@mui/icons-material": "^5.11.16",
-    "@mui/material": "^5.13.6"
+    "reselect": "^4.1.8"
   },
   "devDependencies": {
     "@americanexpress/one-app-bundler": "^6.10.0",

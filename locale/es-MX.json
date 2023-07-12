@@ -1,3 +1,8 @@
 {
-  "greeting": "Bienvenidos a nasa-auth desde Mexico!"
+  "greeting": "Bienvenidos a nasa-auth desde Mexico!",
+  "firstname.error":"First name cannot be left blank",
+  "lastname.error":"Last name is empty",
+  "email.error":"Please provide a valid email address",
+  "password.error":"Please provide a password to proceed",
+  "username.error":"Sorry!, We cannot proceed without username"
 }
