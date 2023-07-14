@@ -10,10 +10,10 @@ import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
+import Cookies from 'js-cookie';
 import { useIntl } from 'react-intl';
 import { ValidationError } from './ValidationError';
 import { useSignIn } from '../hooks/useSignIn';
-import { useAuthDispatcher } from '../dispatcher/useAuthDispatcher';
 import { ProgressLoader } from './ProgressLoader';
 
 export const SignInComponent = ({ locale, router }) => {
@@ -27,8 +27,6 @@ export const SignInComponent = ({ locale, router }) => {
   const intl = useIntl();
   const [isOpen, setIsOpen] = React.useState(false);
   const [alertMsg, setAlertMsg] = React.useState('');
-
-  const dispatch = useAuthDispatcher();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -53,10 +51,10 @@ export const SignInComponent = ({ locale, router }) => {
 
   React.useEffect(() => {
     if (!error && signInResponse) {
-      dispatch(signInResponse);
+      Cookies.set('accessToken', signInResponse?.token, { expires: 7 });
       router.push(`/${locale}/home`);
     }
-  }, [signInResponse, error, dispatch, router, locale]);
+  }, [signInResponse, error, router, locale]);
 
   if (isLoading) {
     return <ProgressLoader />;
